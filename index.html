@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sky Skirmish | Multiplayer Plane Battles</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="background"></div>
+    <main class="app">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Multiplayer dogfights</p>
+          <h1>Sky Skirmish</h1>
+          <p class="subtitle">
+            Host or join aerial battles with quick five-digit lobby codes. Keep squads tight with
+            five-player caps and host-approved entries.
+          </p>
+          <div class="hero-actions">
+            <button class="primary" id="createLobby">Create Lobby</button>
+            <button class="ghost" id="randomJoin">Join Random Lobby</button>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h2>Lobby Codes</h2>
+          <p class="hint">Share this code with your squad.</p>
+          <div class="code-display" id="lobbyCode">-----</div>
+          <div class="lobby-meta">
+            <div>
+              <span class="label">Host</span>
+              <span id="hostName">You</span>
+            </div>
+            <div>
+              <span class="label">Players</span>
+              <span id="playerCount">1 / 5</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="grid">
+        <div class="panel">
+          <h3>Join a Lobby</h3>
+          <p class="hint">Enter a 5-digit code and a nickname to request entry.</p>
+          <form id="joinForm">
+            <label>
+              Lobby code
+              <input type="text" maxlength="5" minlength="5" inputmode="numeric" placeholder="12345" id="codeInput" required />
+            </label>
+            <label>
+              Nickname
+              <input type="text" maxlength="12" placeholder="FalconAce" id="nicknameInput" required />
+            </label>
+            <button type="submit" class="primary">Send Join Request</button>
+          </form>
+        </div>
+
+        <div class="panel">
+          <h3>Incoming Requests</h3>
+          <p class="hint">Hosts can approve or decline pilots before they spawn.</p>
+          <ul id="requestList" class="request-list"></ul>
+        </div>
+
+        <div class="panel">
+          <h3>Squad Roster</h3>
+          <p class="hint">Up to five pilots can fly together.</p>
+          <ul id="roster" class="roster"></ul>
+        </div>
+      </section>
+
+      <section class="panel rules">
+        <div>
+          <h3>Match Snapshot</h3>
+          <ul>
+            <li>Arcade plane combat with quick respawns.</li>
+            <li>Host accepts or declines each join request.</li>
+            <li>Nicknames show up in the lobby and scoreboard.</li>
+            <li>Lobby codes reset every match for safety.</li>
+          </ul>
+        </div>
+        <div class="stats">
+          <div>
+            <span class="stat">5</span>
+            <span class="label">Max players</span>
+          </div>
+          <div>
+            <span class="stat">1</span>
+            <span class="label">Host approval</span>
+          </div>
+          <div>
+            <span class="stat">∞</span>
+            <span class="label">Dogfight energy</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
